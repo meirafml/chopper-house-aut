@@ -1,0 +1,43 @@
+{
+  "Krone": {
+    "forrageiras": [
+      "BiG X 480", "BiG X 530", "BiG X 580", "BiG X 630", "BiG X 680", "BiG X 780", "BiG X 880", "BiG X 980", "BiG X 1080", "BiG X 1180"
+    ],
+    "plataformas": {
+      "milho": ["EasyCollect 450-2", "EasyCollect 600-2", "EasyCollect 600-3", "EasyCollect 750-2", "EasyCollect 750-3", "EasyCollect 900-3"],
+      "capim_direto": ["EasyFlow 300", "EasyFlow 380", "EasyFlow 500"]
+    }
+  },
+  "Claas": {
+    "forrageiras": [
+      "Jaguar 840", "Jaguar 850", "Jaguar 860", "Jaguar 870", "Jaguar 930", "Jaguar 940", "Jaguar 950", "Jaguar 960", "Jaguar 970", "Jaguar 980", "Jaguar 990"
+    ],
+    "plataformas": {
+      "milho_rotativo": ["Orbis 600", "Orbis 750", "Orbis 900", "Orbis 600 SD", "Orbis 750 AC"],
+      "milho_linha": ["RU450", "RU600"],
+      "capim_direto": ["Direct Disc 500", "Direct Disc 520", "Direct Disc 600"],
+      "pickup": ["PU300", "PU300HD", "PU380"]
+    }
+  },
+  "New Holland": {
+    "forrageiras": [
+      "FR450", "FR480", "FR500", "FR550", "FR600", "FR650", "FR700", "FR780", "FR850", "FR920"
+    ],
+    "plataformas": {
+      "milho": ["600SF", "750SF", "900SF", "980CR"],
+      "capim_direto": ["230FP", "300FP", "380FP"],
+      "pickup": ["300FP Pickup", "380FP Pickup"]
+    }
+  },
+  "John Deere": {
+    "forrageiras": {
+      "serie_8000": ["8100", "8200", "8300", "8400", "8500", "8600"],
+      "serie_9000": ["9100", "9200", "9300", "9400", "9500", "9600", "9700", "9800", "9900"]
+    },
+    "plataformas": {
+      "milho": ["Kemper 345", "Kemper 360", "Kemper 375", "Kemper 390", "Kemper 445", "Kemper 460", "Kemper 475", "Kemper 490"],
+      "capim_direto": ["630B", "635B"],
+      "pickup": ["630R", "639"]
+    }
+  }
+}

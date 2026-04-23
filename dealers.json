@@ -1,0 +1,232 @@
+[
+  {
+    "razao_social": "Twentrac B.V.",
+    "pais": "Holanda",
+    "tipo": "Concessionária NH",
+    "whatsapp": "+31 6 22208376",
+    "email": "lwessel@twentrac.nl",
+    "produtos_importados": [
+      "Forrageiras NH",
+      "Forrageiras Claas"
+    ],
+    "nota_qualidade": 10,
+    "observacoes": "Extremamente confiável, provê garantia quando necessário, máquinas sempre revisadas. Ótimo fornecedor. Maior distribuidor de forrageiras NH da Europa."
+  },
+  {
+    "razao_social": "AGRAMEX",
+    "pais": "Holanda",
+    "tipo": "Multimarcas",
+    "whatsapp": "+31 227604300",
+    "email": "info@agramex.com",
+    "produtos_importados": [
+      "Forrageira NH"
+    ],
+    "nota_qualidade": 10,
+    "observacoes": "Parceiro de longa data, confiável."
+  },
+  {
+    "razao_social": "FRICKE",
+    "pais": "Alemanha",
+    "tipo": "Concessionária Claas",
+    "whatsapp": "+49 4281712710",
+    "email": "Michael.Blanken@fricke.de",
+    "produtos_importados": [
+      "Forrageira Claas"
+    ],
+    "nota_qualidade": 10,
+    "observacoes": "Maior revenda Claas da Alemanha. Confiável."
+  },
+  {
+    "razao_social": "HARVEST PARK",
+    "pais": "Alemanha",
+    "tipo": "Multimarcas",
+    "whatsapp": "+49 17610016255",
+    "email": "Andreas.Grotegerd@harvestpark.com",
+    "produtos_importados": [
+      "Forrageiras Krone"
+    ],
+    "nota_qualidade": 10,
+    "observacoes": "Pertence ao grupo KRONE."
+  },
+  {
+    "razao_social": "AM MACHINERY",
+    "pais": "Holanda",
+    "tipo": "Multimarcas",
+    "whatsapp": "+31 6 29160671",
+    "email": "celeste@ammachinery.nl",
+    "produtos_importados": [
+      "Forrageiras John Deere",
+      "Forrageiras Claas"
+    ],
+    "nota_qualidade": 4,
+    "observacoes": "Histórico ruim."
+  },
+  {
+    "razao_social": "BEVERDAM",
+    "pais": "Holanda",
+    "tipo": "Multimarcas",
+    "whatsapp": "+31 546 433 114",
+    "email": "sales@beverdammachinery.nl",
+    "produtos_importados": [
+      "Forrogeira Claas."
+    ],
+    "nota_qualidade": 2,
+    "observacoes": "Evitar."
+  },
+  {
+    "razao_social": "SLECOMA",
+    "pais": "Holanda",
+    "tipo": "Concessionaria New Holland",
+    "whatsapp": "+31 622143292",
+    "email": "thijs@slecoma.nl",
+    "produtos_importados": [
+      "Forrageira FR"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "COMPASS",
+    "pais": "Inglaterra",
+    "tipo": "Multimarcas",
+    "whatsapp": "+44 1278662836",
+    "email": "sales@compasstractors.co.uk",
+    "produtos_importados": [
+      "Forrageira Krone"
+    ],
+    "nota_qualidade": 10,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "BREU",
+    "pais": "Alemanha",
+    "tipo": "Multimarcas",
+    "whatsapp": "+49 9971995300",
+    "email": "info@breu-cham.de",
+    "produtos_importados": [
+      "Forrageira krone"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "AGROPOL",
+    "pais": "Polonia",
+    "tipo": "Multimarcas",
+    "whatsapp": "+48 784 916 843",
+    "email": "adekpiech96@gmail.com",
+    "produtos_importados": [
+      "Forrageira John Deere"
+    ],
+    "nota_qualidade": 4,
+    "observacoes": "Histórico ruim."
+  },
+  {
+    "razao_social": "BAUER VOLK",
+    "pais": "Alemanha",
+    "tipo": "Concessionaria John Deere",
+    "whatsapp": "+49 01711214152",
+    "email": "Josef.Brunner@hans-voelk.de",
+    "produtos_importados": [
+      "Forrageira John Deere"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "CONNECT",
+    "pais": "Alemanha",
+    "tipo": "Multimarcas",
+    "whatsapp": "+49 (0)35323 638-12",
+    "email": "Volker.Pietzsch@SundLconnect.de",
+    "produtos_importados": [
+      "Forrageira John Deere"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "SOFIMAT",
+    "pais": "França",
+    "tipo": "Multimarcas",
+    "whatsapp": "+33 785 28 6627",
+    "email": "goulwen.lebellego@sofimat.fr",
+    "produtos_importados": [
+      "Forrageiras John Deere"
+    ],
+    "nota_qualidade": 2,
+    "observacoes": "Histórico ruim."
+  },
+  {
+    "razao_social": "EM TIJS",
+    "pais": "Holanda",
+    "tipo": "Multimarcas",
+    "whatsapp": "+31 6 53246628",
+    "email": "info@tijs.nl",
+    "produtos_importados": [
+      "Forrageiras John Deere"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "STADIL",
+    "pais": "Dinamarca",
+    "tipo": "concessionaria Claas",
+    "whatsapp": "+4597331005",
+    "email": "stadil@stadil.dk",
+    "produtos_importados": [
+      "Forrageira Claas"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "KOWALA",
+    "pais": "Polonia",
+    "tipo": "Multimarcas",
+    "whatsapp": "+48 668042803",
+    "email": "dkowalski@kowala-agrotechnika.pl",
+    "produtos_importados": [
+      "Forrageira Claas"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "WOLAF WEYLAND",
+    "pais": "Luxembourg",
+    "tipo": "Multimarcas",
+    "whatsapp": "+35223637211",
+    "email": "info@wowey.eu",
+    "produtos_importados": [
+      "Forrageira FR"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "B+S Landtechnik",
+    "pais": "Alemanha",
+    "tipo": "Concessionaria John Deere",
+    "whatsapp": "+49038756330",
+    "email": "nfo@bs-landtechnik.de",
+    "produtos_importados": [
+      "Forrageira John Deere"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  },
+  {
+    "razao_social": "K&H",
+    "pais": "Alemanha",
+    "tipo": "Concessionaria Claas",
+    "whatsapp": "+491629878730",
+    "email": "Mario.joite@k-h-landmaschinen.de",
+    "produtos_importados": [
+      "Plataformas Claas"
+    ],
+    "nota_qualidade": 8,
+    "observacoes": ""
+  }
+]

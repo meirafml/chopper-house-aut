@@ -1,0 +1,67 @@
+name: Deploy Python Bot to Google Cloud Run Jobs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.py'
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'knowledge_base.json'
+  workflow_dispatch: # Permite rodar manualmente pelo GitHub
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Build and Push Docker Image
+        env:
+          PROJECT_ID: ${{ steps.auth.outputs.project_id }}
+        run: |
+          IMAGE_NAME="us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/chopper-house-bot"
+          
+          # Construir a imagem localmente usando nosso Dockerfile
+          docker build -t $IMAGE_NAME .
+          
+          # Fazer o push para o Artifact Registry
+          docker push $IMAGE_NAME
+
+      - name: Deploy to Cloud Run Jobs
+        env:
+          PROJECT_ID: ${{ steps.auth.outputs.project_id }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+        run: |
+          IMAGE_NAME="us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/chopper-house-bot"
+          
+          # Criar ou atualizar o Cloud Run Job
+          gcloud run jobs deploy chopper-house-bot \
+            --image $IMAGE_NAME \
+            --region us-central1 \
+            --tasks 1 \
+            --max-retries 1 \
+            --set-env-vars "GEMINI_API_KEY=$GEMINI_API_KEY,SPREADSHEET_ID=$SPREADSHEET_ID" \
+            --set-secrets "GOOGLE_APPLICATION_CREDENTIALS_JSON=GCP_CREDENTIALS_SECRET:latest" || \
+            echo "Atenção: A montagem de secrets requer configuração prévia no Secret Manager. Se falhar, você precisará adicionar o arquivo credentials.json ou usar as vars do ambiente."
+
+      - name: Execute Job (Optional - Manually Triggered)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          gcloud run jobs execute chopper-house-bot --region us-central1

@@ -10,7 +10,7 @@ import time
 
 class CookieResponse(BaseModel):
     has_banner: bool = Field(description="Verdadeiro se houver um banner de cookies pedindo aceite na tela.")
-    accept_button_selector: Optional[str] = Field(description="O seletor CSS do botão de aceitar cookies, se existir.")
+    accept_button_text: Optional[str] = Field(description="O texto visível exato do botão de aceitar cookies, ex: 'Accept all', 'Alle akzeptieren', 'Aceitar todos'. Retorne None se não houver banner.")
 
 class LinkResponse(BaseModel):
     links: list[str] = Field(description="Lista de URLs completas ou seletores CSS dos links de anúncios de forrageiras (PDP).")
@@ -39,10 +39,12 @@ class AgenticNavigator:
         
         # Envia a screenshot para o Gemini
         response = self.client.models.generate_content(
-            model='gemini-2.5-flash', # ou gemini-2.5-flash dependendo da versão disponivel no GCP
+            model='gemini-2.5-flash',
             contents=[
                 types.Part.from_bytes(data=screenshot, mime_type='image/jpeg'),
-                "Analise esta página. Existe um banner de cookies pedindo permissão de aceite? Retorne os dados estruturados."
+                "Analise esta página. Existe um banner de cookies pedindo permissão de aceite? "
+                "Se sim, retorne o TEXTO VISÍVEL EXATO do botão de aceitar (ex: 'Accept all', 'Alle akzeptieren', 'Aceitar todos'). "
+                "NÃO retorne seletores CSS. Retorne apenas o texto do botão."
             ],
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
@@ -52,14 +54,19 @@ class AgenticNavigator:
         )
         
         result = json.loads(response.text)
-        if result.get("has_banner") and result.get("accept_button_selector"):
-            selector = result["accept_button_selector"]
-            print(f"[Agentic Navigator] Banner detectado! Tentando clicar no seletor: {selector}")
+        if result.get("has_banner") and result.get("accept_button_text"):
+            btn_text = result["accept_button_text"]
+            print(f"[Agentic Navigator] Banner detectado! Texto do botão: '{btn_text}'")
             try:
-                self.page.locator(selector).first.click(timeout=3000)
-                time.sleep(1) # Aguarda o banner sumir
+                self.page.get_by_role("button", name=btn_text).first.click(timeout=5000)
+                time.sleep(1)
+                print("[Agentic Navigator] ✅ Cookie banner aceito com sucesso.")
             except Exception as e:
-                print(f"[Agentic Navigator] Falha ao clicar no cookie banner: {e}")
+                try:
+                    self.page.locator(f"text='{btn_text}'").first.click(timeout=3000)
+                    print("[Agentic Navigator] ✅ Cookie banner aceito via fallback de texto.")
+                except Exception:
+                    print(f"[Agentic Navigator] Falha ao clicar no cookie banner: {e}")
         else:
             print("[Agentic Navigator] Nenhum banner de cookie obstrutivo detectado.")
 

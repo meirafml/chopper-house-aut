@@ -74,7 +74,15 @@ export async function GET() {
       };
     });
 
-    return NextResponse.json({ machines });
+    // Remove duplicatas baseado na URL do anúncio
+    const seen = new Set<string>();
+    const uniqueMachines = machines.filter((m) => {
+      if (!m.url || seen.has(m.url)) return false;
+      seen.add(m.url);
+      return true;
+    });
+
+    return NextResponse.json({ machines: uniqueMachines });
   } catch (error: any) {
     console.error("Erro na API /api/machines:", error);
     return NextResponse.json(

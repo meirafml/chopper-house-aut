@@ -82,6 +82,13 @@ class SheetsClient:
         if current_cat and current_cat not in allowed_categories:
             print(f"[Sheets Client] Ignorando categoria não-alvo ({data.categoria}): {data.marca} {data.modelo}")
             return
+        
+        # Filtra apenas marcas-alvo (autopropelidas)
+        ALLOWED_BRANDS = ["krone", "claas", "john deere", "new holland", "nh"]
+        current_brand = data.marca.strip().lower() if data.marca else ""
+        if not any(brand in current_brand for brand in ALLOWED_BRANDS):
+            print(f"[Sheets Client] Ignorando marca não-alvo ({data.marca}): {data.marca} {data.modelo}")
+            return
             
         row = [
             data.marca,

@@ -20,7 +20,7 @@ class AgenticNavigator:
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         self.playwright = sync_playwright().start()
         # No Cloud Run o sandbox precisa ser desativado
-        self.browser = self.playwright.chromium.launch(headless=headless, args=['--no-sandbox', '--disable-setuid-sandbox'])
+        self.browser = self.playwright.chromium.launch(headless=headless, args=['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'])
         self.context = self.browser.new_context(
             viewport={'width': 1280, 'height': 800},
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"

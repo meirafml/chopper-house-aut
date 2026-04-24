@@ -1,0 +1,10 @@
+# Override .gitignore for Cloud Build — we NEED .env and credentials.json in the image
+.venv/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+.DS_Store
+.git
